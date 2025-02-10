@@ -29,7 +29,7 @@ console.log(calculateSalesTax(500, 0.1)) ;         // Output: Sales Tax: $50
 
 // Task 3 - Employee Bonus Calculation
 
-const calculateBonus = (salary, performanceRating) => {      // Function of rcalculating loyalty points
+const calculateBonus = (salary, performanceRating) => {      // Function for bonus calculation
     let bonus ;
     if (performanceRating === "Excellent") {
         bonus = salary * 0.2
@@ -38,7 +38,7 @@ const calculateBonus = (salary, performanceRating) => {      // Function of rcal
         bonus = salary * 0.1
     }
     else if (performanceRating === "Average") {
-        bonus = salary * 0.05
+        bonus = salary * 0.05                         // Metrics for percentages in bonuses
     }
     return `Bonus: $${bonus}`
     } ;
@@ -50,3 +50,26 @@ console.log(calculateBonus(5000, "Excellent")) ;      // Output: Bonus: $1000
 console.log(calculateBonus(7000, "Good")) ;           // Output: Bonus: $700
 
 
+// Task 4 - Subscription Pricing Model
+
+const calculateSubscriptionCost = (plan, months, discount = 0) => {      // Function for subscription discount calculation
+       let monthlyPayment ;
+    if (plan === "Basic") {
+        monthlyPayment = 10
+    } 
+    else if (plan === "Premium") {
+        monthlyPayment = 20
+    }
+    else if (plan === "Enterprise") {
+        monthlyPayment = 50                         // Metrics for subscription monthly payments
+    } ;
+    
+    let subscriptionCost = (monthlyPayment * months) - discount ;
+    return `Total Cost: $${subscriptionCost}`
+    } ;
+
+ // Test data 1 - Basic plan
+console.log(calculateSubscriptionCost("Basic", 6, 10)) ;         // Output: Total Cost: $50
+
+// Test data 1 - Basic plan
+console.log(calculateSubscriptionCost("Premium", 12, 0)) ;       // Output: Total Cost: $240
