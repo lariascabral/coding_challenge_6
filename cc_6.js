@@ -86,6 +86,18 @@ function convertCurrency(amount, exchangeRate) {
 console.log(convertCurrency(100, 1.1)) ;                         // Output: Converted Amount: $110.00
 
 // Test data 2
-console.log(convertCurrency(250, 0.85)) ;                         // Output: Converted Amount: $212.50
+console.log(convertCurrency(250, 0.85)) ;                        // Output: Converted Amount: $212.50
 
 
+// Task 6 - Higher-Order Function for Bulk Orders
+
+let orders = [ 300, 495, 570, 650, 700, 1230] ;                  // Creation of array
+
+function applyBulkDiscount(orders, bulkDiscount) {
+    return orders.map(bulkDiscount) ;                           // Application of the bulk discount
+} ;
+
+const bulkDiscount = amount => amount > 500 ? amount * 0.9 : amount;
+let discountedOrders = applyBulkDiscount(orders, bulkDiscount) ;
+
+console.log("Orders with possible discount applied:", discountedOrders) ;       // Output: Orders with possible discount applied: [300, 495, 513, 585, 630, 1107]
