@@ -105,15 +105,33 @@ console.log("Orders with possible discount applied:", discountedOrders) ;       
 
 // Task 7 - Business Expense Tracker
 
-function createExpenseTracker() {
+function createExpenseTracker() {                               // Creation of the primary function
     let totalExpenses = 0 ; 
-    return function(expense) {
+    return function(expense) {                                  // Creation of the secundary function
         totalExpenses += expense ;
     return `Total Expenses: $${totalExpenses}` ;
     } ;
 } ;
 
 let tracker = createExpenseTracker();
+// Test data 1
 console.log(tracker(200));                                       // Output: "Total Expenses: $200"
+
+// Test data 2
 console.log(tracker(150));                                       // Output: "Total Expenses: $350"
 
+
+// Task 8 - Employee Promotion Evaluation
+
+function calculateYearsToPromotion(employeeLevel) {
+    if (employeeLevel >= 10) {
+        return "Years until Level 10: 0" ;                       // If already in Level 10, no need to do anything
+    }
+    else return `Years until Level 10: ${(10 - employeeLevel) * 2}` ;       // If not in Level 10, calculates how many levels times to (since getting to a level takes 2 years) left
+} ; 
+
+// Test data 1 - Level 7
+console.log(calculateYearsToPromotion(7));                       // Output: Years to Level 10: 6)
+
+// Test data 1 - Level 5
+console.log(calculateYearsToPromotion(5));                       // Output: Years to Level 10: 10)
