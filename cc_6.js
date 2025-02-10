@@ -17,7 +17,7 @@ console.log(calculateProfit(50, 70, 200)) ;     // Output: Total Profit: $4000
 
 function calculateSalesTax (amount, taxRate) {
     let tax = amount * taxRate
-    return `Sales Tax: $${tax}`
+    return `Sales Tax: $${tax.toFixed(2)}`
 } ;                                                                 // Creation of function to calculate profits
 
 // Test data 1 - 7% sales tax
@@ -71,5 +71,21 @@ const calculateSubscriptionCost = (plan, months, discount = 0) => {      // Func
  // Test data 1 - Basic plan
 console.log(calculateSubscriptionCost("Basic", 6, 10)) ;         // Output: Total Cost: $50
 
-// Test data 1 - Basic plan
+// Test data 2 - Premium plan
 console.log(calculateSubscriptionCost("Premium", 12, 0)) ;       // Output: Total Cost: $240
+
+
+// Task 5 - Currency Conversion
+
+function convertCurrency(amount, exchangeRate) {
+    const conversion = amount * exchangeRate
+    return `Converted Amount: $${conversion.toFixed(2)}`
+}
+
+// Test data 1
+console.log(convertCurrency(100, 1.1)) ;                         // Output: Converted Amount: $110.00
+
+// Test data 2
+console.log(convertCurrency(250, 0.85)) ;                         // Output: Converted Amount: $212.50
+
+
