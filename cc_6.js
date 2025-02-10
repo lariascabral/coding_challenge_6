@@ -94,10 +94,26 @@ console.log(convertCurrency(250, 0.85)) ;                        // Output: Conv
 let orders = [ 300, 495, 570, 650, 700, 1230] ;                  // Creation of array
 
 function applyBulkDiscount(orders, bulkDiscount) {
-    return orders.map(bulkDiscount) ;                           // Application of the bulk discount
+    return orders.map(bulkDiscount) ;                            // Application of the bulk discount
 } ;
 
 const bulkDiscount = amount => amount > 500 ? amount * 0.9 : amount;
 let discountedOrders = applyBulkDiscount(orders, bulkDiscount) ;
 
 console.log("Orders with possible discount applied:", discountedOrders) ;       // Output: Orders with possible discount applied: [300, 495, 513, 585, 630, 1107]
+
+
+// Task 7 - Business Expense Tracker
+
+function createExpenseTracker() {
+    let totalExpenses = 0 ; 
+    return function(expense) {
+        totalExpenses += expense ;
+    return `Total Expenses: $${totalExpenses}` ;
+    } ;
+} ;
+
+let tracker = createExpenseTracker();
+console.log(tracker(200));                                       // Output: "Total Expenses: $200"
+console.log(tracker(150));                                       // Output: "Total Expenses: $350"
+
